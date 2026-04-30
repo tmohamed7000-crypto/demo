@@ -1,76 +1,63 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>Demo Chat</title>
+<meta charset="UTF-8">
+<title>Demo Chat</title>
 
-  <style>
-    body {
-      font-family: Arial;
-      text-align: center;
-      background: #111;
-      color: white;
-      padding-top: 100px;
-    }
+<style>
+body {
+    background: #0b0b0b;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    padding-top: 100px;
+}
 
-    h1 {
-      margin-bottom: 20px;
-    }
+input {
+    padding: 12px;
+    width: 250px;
+    border-radius: 6px;
+    border: none;
+}
 
-    input {
-      padding: 12px;
-      width: 260px;
-      border-radius: 6px;
-      border: none;
-      outline: none;
-      font-size: 16px;
-    }
+button {
+    padding: 12px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 6px;
+    background: #00c853;
+    color: white;
+    cursor: pointer;
+}
+</style>
 
-    button {
-      padding: 12px 20px;
-      margin-left: 10px;
-      border: none;
-      border-radius: 6px;
-      background: #00c853;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #00a844;
-    }
-  </style>
 </head>
-
 <body>
 
 <h1>🤖 جرب البوت الخاص بك</h1>
-
 <p>ادخل الكود الخاص بك:</p>
 
-<input type="text" id="key" placeholder="اكتب الكود هنا">
+<input id="code" placeholder="اكتب الكود هنا">
 <button onclick="loadBot()">تشغيل</button>
 
 <script>
 function loadBot() {
-  var key = document.getElementById("key").value.trim();
+    let code = document.getElementById("code").value.trim();
 
-  if(key === "demo123") {
+    // 🔥 هنا بتضيف العملاء
+    let bots = {
+        "demo1": "https://embed.tawk.to/69f39f472041fc1c2d2c697d/1jnfqcbqi",
+        "demo2": "https://embed.tawk.to/PUT-YOUR-SECOND-ID-HERE"
+    };
 
-    var s1 = document.createElement("script");
-    var s0 = document.getElementsByTagName("script")[0];
-
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/69f39f472041fc1c2d2c697d/1jnfqcbqi';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin','*');
-
-    s0.parentNode.insertBefore(s1, s0);
-
-  } else {
-    alert("❌ كود غير صحيح");
-  }
+    if (bots[code]) {
+        let s = document.createElement("script");
+        s.src = bots[code];
+        s.async = true;
+        document.body.appendChild(s);
+    } else {
+        alert("❌ الكود غير صحيح");
+    }
 }
 </script>
 
