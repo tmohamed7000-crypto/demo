@@ -2,62 +2,106 @@
 <html lang="ar">
 <head>
 <meta charset="UTF-8">
-<title>Demo Chat</title>
+<title>نظام حجز تلقائي بالواتساب</title>
 
 <style>
 body {
-    background: #0b0b0b;
-    color: white;
+    margin:0;
     font-family: Arial;
-    text-align: center;
-    padding-top: 100px;
+    background:#0b0b0b;
+    color:white;
+    text-align:center;
 }
 
-input {
-    padding: 12px;
-    width: 250px;
-    border-radius: 6px;
-    border: none;
+.hero {
+    padding:80px 20px;
 }
 
-button {
-    padding: 12px 20px;
-    margin-left: 10px;
-    border: none;
-    border-radius: 6px;
-    background: #00c853;
-    color: white;
-    cursor: pointer;
+h1 {
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+p {
+    color:#ccc;
+    font-size:18px;
+}
+
+.btn {
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 25px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    font-size:18px;
+}
+
+.section {
+    padding:60px 20px;
+}
+
+.box {
+    background:#1a1a1a;
+    margin:15px;
+    padding:20px;
+    border-radius:10px;
+}
+
+.footer {
+    padding:40px;
+    font-size:14px;
+    color:#888;
 }
 </style>
 
 </head>
+
 <body>
 
-<h1>🤖 جرب البوت الخاص بك</h1>
-<p>ادخل الكود الخاص بك:</p>
+<div class="hero">
+<h1>🚀 زوّد حجوزاتك تلقائيًا</h1>
+<p>ركّب شات ذكي على موقعك يرد على العملاء ويحجز لهم فورًا</p>
 
-<input id="code" placeholder="اكتب الكود هنا">
-<button onclick="loadBot()">تشغيل</button>
+<a class="btn" href="https://wa.me/201012345678" target="_blank">
+📱 تواصل على واتساب
+</a>
+</div>
 
+<div class="section">
+<h2>🔥 المميزات</h2>
+
+<div class="box">رد تلقائي على العملاء 24 ساعة</div>
+<div class="box">تحويل مباشر إلى واتساب</div>
+<div class="box">زيادة الحجوزات بنسبة كبيرة</div>
+<div class="box">تركيب سريع خلال دقائق</div>
+
+</div>
+
+<div class="section">
+<h2>🤖 جرّب البوت الآن</h2>
+<p>الشات شغال تحت 👇</p>
+</div>
+
+<div class="footer">
+© جميع الحقوق محفوظة
+</div>
+
+<!-- 🔥 Tawk Dynamic Script -->
 <script>
-function loadBot() {
-    let code = document.getElementById("code").value.trim();
+function getParam(name) {
+    const url = new URL(window.location.href);
+    return url.searchParams.get(name);
+}
 
-    // 🔥 هنا بتضيف العملاء
-    let bots = {
-        "demo1": "https://embed.tawk.to/69f39f472041fc1c2d2c697d/1jnfqcbqi",
-        "demo2": "https://embed.tawk.to/PUT-YOUR-SECOND-ID-HERE"
-    };
+let bot = getParam("bot");
 
-    if (bots[code]) {
-        let s = document.createElement("script");
-        s.src = bots[code];
-        s.async = true;
-        document.body.appendChild(s);
-    } else {
-        alert("❌ الكود غير صحيح");
-    }
+if (bot) {
+    let s = document.createElement("script");
+    s.src = "https://embed.tawk.to/" + bot;
+    s.async = true;
+    document.body.appendChild(s);
 }
 </script>
 
