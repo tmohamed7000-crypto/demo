@@ -1,59 +1,89 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>AutoReply Pro | Demo مخصص لك</title>
+<title>AutoReply Pro | نظام الرد التلقائي</title>
 
 <style>
 body {
     margin:0;
-    font-family: Arial;
-    background:#0b0b0b;
-    color:white;
-    text-align:center;
+    font-family: 'Segoe UI', Tahoma;
+    background:#0f172a;
+    color:#e2e8f0;
 }
 
+/* الهيدر */
 .hero {
+    text-align:center;
     padding:80px 20px;
 }
 
-h1 {
-    font-size:32px;
-    margin-bottom:20px;
+.hero h1 {
+    font-size:36px;
+    margin-bottom:10px;
 }
 
-p {
-    color:#ccc;
+.hero p {
+    color:#94a3b8;
     font-size:18px;
 }
 
-.btn {
-    display:inline-block;
-    margin-top:20px;
-    padding:15px 25px;
-    background:#25D366;
+.main-btn {
+    margin-top:25px;
+    padding:14px 28px;
+    background:#22c55e;
     color:white;
     text-decoration:none;
     border-radius:8px;
+    display:inline-block;
     font-size:18px;
 }
 
+/* القسم */
 .section {
     padding:60px 20px;
+    text-align:center;
 }
 
-.box {
-    background:#1a1a1a;
-    margin:15px;
-    padding:20px;
+/* الأزرار */
+.features {
+    max-width:600px;
+    margin:30px auto;
+}
+
+.btn-feature {
+    display:block;
+    width:100%;
+    margin:12px 0;
+    padding:15px;
+    background:#1e293b;
+    border:1px solid #334155;
+    color:#e2e8f0;
     border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
 }
 
+.btn-feature:hover {
+    background:#334155;
+}
+
+/* تجربة */
+.demo {
+    margin-top:40px;
+    font-size:18px;
+    color:#cbd5f5;
+}
+
+/* الفوتر */
 .footer {
-    padding:40px;
+    text-align:center;
+    padding:30px;
+    color:#64748b;
     font-size:14px;
-    color:#888;
 }
 </style>
 
@@ -62,34 +92,34 @@ p {
 <body>
 
 <div class="hero">
-<h1>🚀 AutoReply Pro</h1>
-<p>نظام رد تلقائي ذكي لزيادة الحجوزات والمبيعات</p>
+    <h1>AutoReply Pro</h1>
+    <p>نظام رد تلقائي ذكي يساعدك على زيادة العملاء والحجوزات</p>
 
-<a class="btn" href="https://wa.me/201012345678" target="_blank">
-📱 تواصل على واتساب
-</a>
+    <a class="main-btn" href="https://wa.me/201105039228" target="_blank">
+        تواصل عبر واتساب
+    </a>
 </div>
 
 <div class="section">
-<h2>حوّل الزوار إلى عملاء تلقائيًا</h2>
+    <h2>المميزات</h2>
 
-<div class="box">رد تلقائي 24 ساعة</div>
-<div class="box">تحويل مباشر إلى واتساب</div>
-<div class="box">زيادة الحجوزات</div>
-<div class="box">تركيب خلال دقائق</div>
+    <div class="features">
+        <button class="btn-feature">استجابة تلقائية على مدار 24 ساعة</button>
+        <button class="btn-feature">تحويل مباشر إلى واتساب</button>
+        <button class="btn-feature">زيادة معدل التحويل والمبيعات</button>
+        <button class="btn-feature">إعداد سريع خلال دقائق</button>
+    </div>
 
-</div>
-
-<div class="section">
-<h2>🤖 جرّب البوت الآن</h2>
-<p>الشات شغال تحت 👇</p>
+    <div class="demo">
+        جرّب البوت الآن — نافذة المحادثة بالأسفل
+    </div>
 </div>
 
 <div class="footer">
-© AutoReply Pro 2026 - جميع الحقوق محفوظة
+    © AutoReply Pro — جميع الحقوق محفوظة
 </div>
 
-<!-- تشغيل البوت من اللينك -->
+<!-- تشغيل البوت من الرابط -->
 <script>
 function getParam(name) {
     const url = new URL(window.location.href);
